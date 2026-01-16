@@ -1,74 +1,120 @@
+
 *******************************************************************************
     __      ________ _   _ _    _  _____ 
     \ \    / /  ____| \ | | |  | |/ ____|
      \ \  / /| |__  |  \| | |  | | (___  
       \ \/ / |  __| | . ` | |  | |\___ \ 
        \  /  | |____| |\  | |__| |____) |
-        \/   |______|_| \_|\____/|_____/ 
-                                         
-          VENETA ENGINEERING NETWORK UTILITY SYSTEM
+        \/   |______|_| \_|_ \____/|_____/ 
+                                          
+           VENETA ENGINEERING NETWORK UTILITY SYSTEM
 *******************************************************************************
- Versione: 3.1.0 "Professional"
- Build:    2026.01.16
- Sviluppo: Veneta Finishing S.r.l.
- Supporto: info@venetafinishing.it
+ DOCUMENTO TECNICO STORICO E MANUALE OPERATIVO (Full Release)
 *******************************************************************************
-3.2.5
-1. NOTE DI RILASCIO - NOVITÀ V3.1.0
+ Stato Software:  PROD (Production Ready)
+ Versione:        3.1.5 "Professional" (LTS)
+ Roadmap Target:  3.5.0 "Enterprise"
+ Sviluppo:        Veneta Finishing S.r.l. - IT/Engineering Dept.
+ Build Date:      2026.01.16
+*******************************************************************************
+
+1. LINEA DEL TEMPO E VERSIONAMENTO (EVOLUTION LOG)
 -------------------------------------------------------------------------------
- [UI]    Nuova interfaccia Dark Mode con angoli arrotondati e scrollbar oro.
- [CORE]  Logica di clonazione speculare dei contenuti del modello.
- [SEC]   Integrità dei permessi NTFS garantita (Mirroring ACL).
- [MAIL]  Modulo di attivazione integrato con supporto Gmail Web e Outlook.
- [FIX]   Risolto il problema del trascinamento finestra su sistemi Win10/11.
- [FIX]   Risolto bug visibilità cartelle su archivi NAS di rete.
+ [V 0.0] - GENESIS (Settembre 2025)
+ - Proof of Concept: Script base per test automazione file-system.
+ - Definizione della struttura ad albero delle commesse standard.
 
-2. LOGICA DI FUNZIONAMENTO E PERMESSI (IMPORTANTE)
+ [V 1.0] - CORE ENGINE (Ottobre 2025)
+ - Rilascio della prima interfaccia testuale (CLI).
+ - Implementazione logica di creazione directory su drive locali.
+
+ [V 2.0] - GUI ADOPTION (Novembre 2025)
+ - Passaggio a WinForms: Prima interfaccia grafica a finestre.
+ - Supporto per unità di rete mappate e archivi NAS centralizzati.
+
+ [V 3.0] - THE DARK SUITE (Gennaio 2026)
+ - Rivoluzione estetica: Lancio del design "VENUS Dark Mode".
+ - Integrazione componenti grafici Oro/Grigio e angoli arrotondati.
+ - Introduzione del sistema di protezione Hardware ID (UUID).
+
+ [V 3.1.0] - CLONE & SECURITY (Gennaio 2026)
+ - Evoluzione logica: Passaggio alla clonazione speculare del modello.
+ - Gestione permessi NTFS (ACL) ereditati direttamente dal modello sorgente.
+ - Fix per compatibilità avanzata Windows 11 e trascinamento finestra.
+
+ [V 3.1.5] - SMART WORKFLOW (RELEASE ATTUALE)
+ - Migrazione Standard: Cambio separatore commessa da punto [.] a trattino [-].
+ - Smart Prefix: Il numero commessa rimane persistente durante l'editing.
+ - Auto-Sync NAS: Algoritmo di scansione intelligente per progressivo automatico.
+
+2. LOGICA DI SICUREZZA E LICENZE CORPORATE
 -------------------------------------------------------------------------------
- VENUS è progettato per lavorare in armonia con le politiche di sicurezza IT:
+ Il software adotta protocolli di sicurezza per la protezione del workflow:
 
- - CLONAZIONE: Il programma non sposta la cartella sorgente, ma CLONA IL 
-   CONTENUTO della cartella modello all'interno della nuova commessa.
- - SICUREZZA: Ogni file e sottocartella viene creato mantenendo i permessi 
-   e le restrizioni già configurati sul modello originale nel NAS.
- - AMMINISTRAZIONE: Se volete che alcune cartelle siano visibili solo a 
-   determinati utenti, impostate le restrizioni sulla cartella "_MODELLO_". 
-   VENUS replicherà fedelmente tali privilegi.
+ > LICENZA: Sistema "Node-Locked" vincolato univocamente al ComputerID.
+ > ARCHIVIAZIONE: File di configurazione e licenza segregati in %LOCALAPPDATA%
+   per garantire la resilienza del sistema in caso di spostamento dell'eseguibile.
+ > PRIVACY: Validazione locale tramite hashing MD5. Nessun dato sensibile o
+   struttura file viene trasmessa all'esterno della rete aziendale.
 
-3. GUIDA RAPIDA ALL'USO (MANUALE UTENTE)
+3. ARCHITETTURA TECNICA (STABILITÀ & PRIVILEGI)
 -------------------------------------------------------------------------------
- PASSO 1: CONFIGURAZIONE
- All'avvio, cliccare sull'icona dell'INGRANAGGIO in alto a sinistra.
- > Percorso NAS: Inserire la cartella radice dove risiedono le annualità.
- > Percorso Modello: Inserire il percorso della cartella che contiene la 
-   struttura standard da replicare.
+ - ENGINE: Algoritmo di replica speculare ad alte prestazioni.
+ - INTEGRITÀ: Copia integrale di Dati, Attributi, Date e Sicurezza (ACL).
+ - GESTIONE NAS: Script di post-creazione per forzare la visibilità ed 
+   eliminare i conflitti di sistema tipici dei server Linux/Samba.
+ - EREDITARIETÀ: Le cartelle Amministrazione/Tecnica ereditano i permessi
+   configurati dall'amministratore sulla cartella "_MODELLO_".
 
- PASSO 2: CREAZIONE COMMESSA
- 1. Selezionare l'ANNO dal menu (il programma legge le cartelle sul server).
- 2. Inserire il NOME CLIENTE (es. 26.01 NOME AZIENDA).
- 3. Selezionare le sottocartelle opzionali (Tecnica/Amministrazione).
- 4. Premere "CREA COMMESSA". Al termine la cartella verrà aperta in Explorer.
-
- PASSO 3: GESTIONE ACCOUNT
- Cliccare su "ⓘ Gestione Account" per visualizzare l'ID del vostro PC, 
- verificare la scadenza della licenza o richiedere assistenza.
-
-4. RISOLUZIONE PROBLEMI (FAQ)
+4. ROADMAP SVILUPPO (FUTURE DEVELOPMENTS)
 -------------------------------------------------------------------------------
- D: La finestra rimane bloccata e non si trascina?
- R: Il problema è risolto nella V3.1.0. Ora puoi trascinare la finestra 
-    cliccando in qualsiasi punto dello sfondo o sul titolo.
+ [V 3.2.0] - PDF REPORTER: Generazione automatica scheda commessa in PDF.
+ [V 3.3.0] - QUICK SEARCH: Motore di ricerca interno per archivio storico.
+ [V 3.4.0] - MULTI-TEMPLATE: Gestione modelli diversi per tipologia lavoro.
+ [V 3.5.0] - ENTERPRISE DASHBOARD: Statistiche grafiche sui volumi di 
+             produzione e integrazione database aziendali.
 
- D: Perché alcune cartelle non vengono create?
- R: Verificare di avere i privilegi di scrittura sul NAS e che la 
-    connessione di rete (VPN se fuori sede) sia attiva.
+5. MANUALE OPERATIVO DETTAGLIATO (USER GUIDE V3.1.5)
+-------------------------------------------------------------------------------
+ FASE A: PREPARAZIONE E SINCRONIZZAZIONE
+ 1. All'avvio, VENUS interroga il NAS nel percorso configurato.
+ 2. Selezionare l'anno fiscale dal menu a tendina (es. 2026).
+ 3. Il sistema scansiona l'archivio e propone automaticamente il primo numero 
+    disponibile nel formato [AA-NN] (es. 26-04).
 
- D: Come aggiorno la licenza?
- R: Accedere a "Gestione Account", copiare l'ID PC e inviarlo tramite 
-    il modulo di richiesta integrato nel programma.
+ FASE B: INSERIMENTO DATI (LOGICA SMART-INPUT)
+ 1. Individuare il campo centrale dove appare "26-XX NOME CLIENTE" (in grigio).
+ 2. FARE CLICK sul testo: La scritta "NOME CLIENTE" sparirà, lasciando il 
+    numero di commessa e uno spazio già pronti (es. "26-04 ").
+ 3. DIGITARE il nome del cliente o della commessa. 
+    NOTA: Se si cancella accidentalmente il numero, è possibile riscriverlo 
+    o cliccare fuori dal campo e rientrare per ripristinare il suggerimento.
+ 4. REGOLE NOMI: Evitare caratteri speciali come \ / : * ? " < > |
+
+ FASE C: PERSONALIZZAZIONE STRUTTURA
+ 1. Nel pannello a scorrimento centrale (Scrollbar Oro), selezionare le 
+    sottocartelle necessarie per il progetto specifico.
+ 2. Cartelle Tecniche: Vengono create nella radice della commessa.
+ 3. Cartelle Amministrazione: Vengono raggruppate nella sottodirectory 
+    "Amministrazione", ereditando i permessi protetti dal Modello.
+
+ FASE D: GENERAZIONE E DEPLOYMENT
+ 1. Premere il pulsante blu "CREA COMMESSA".
+ 2. Il sistema esegue tre operazioni in background:
+    - Creazione della directory principale sul NAS.
+    - Clonazione speculare dei file contenuti nella cartella _MODELLO_.
+    - Rimozione automatica degli attributi di sistema errati.
+ 3. Al termine (1-2 secondi), si aprirà automaticamente una finestra di 
+    Esplora Risorse posizionata all'interno della nuova commessa creata.
+
+ FASE E: RISOLUZIONE PROBLEMI RAPIDA
+ - Messaggio "Inserire nome cliente": Hai premuto Crea senza scrivere nulla 
+   dopo il numero di commessa.
+ - Icona Ingranaggio: Da utilizzare solo se il server cambia indirizzo IP 
+   o se viene spostata la cartella "_MODELLO_".
+ - Icona Info (i): Utilizzare per copiare l'ID PC da inviare all'assistenza.
 
 *******************************************************************************
-         (c) 2026 VENETA FINISHING S.R.L. - TUTTI I DIRITTI RISERVATI
-               PROGETTATO E SVILUPPATO DA VENETA FINISHING
-
+   (c) 2026 VENETA FINISHING S.R.L. - TUTTI I DIRITTI RISERVATI
+   IL SOFTWARE È PROPRIETÀ INTELLETTUALE DI VENETA FINISHING S.R.L.
 *******************************************************************************
