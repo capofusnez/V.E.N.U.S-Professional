@@ -1,0 +1,73 @@
+*******************************************************************************
+    __      ________ _   _ _    _  _____ 
+    \ \    / /  ____| \ | | |  | |/ ____|
+     \ \  / /| |__  |  \| | |  | | (___  
+      \ \/ / |  __| | . ` | |  | |\___ \ 
+       \  /  | |____| |\  | |__| |____) |
+        \/   |______|_| \_|\____/|_____/ 
+                                         
+          VENETA ENGINEERING NETWORK UTILITY SYSTEM
+*******************************************************************************
+ Versione: 3.1.0 "Professional"
+ Build:    2026.01.16
+ Sviluppo: Veneta Finishing S.r.l.
+ Supporto: info@venetafinishing.it
+*******************************************************************************
+
+1. NOTE DI RILASCIO - NOVITÀ V3.1.0
+-------------------------------------------------------------------------------
+ [UI]    Nuova interfaccia Dark Mode con angoli arrotondati e scrollbar oro.
+ [CORE]  Logica di clonazione speculare dei contenuti del modello.
+ [SEC]   Integrità dei permessi NTFS garantita (Mirroring ACL).
+ [MAIL]  Modulo di attivazione integrato con supporto Gmail Web e Outlook.
+ [FIX]   Risolto il problema del trascinamento finestra su sistemi Win10/11.
+ [FIX]   Risolto bug visibilità cartelle su archivi NAS di rete.
+
+2. LOGICA DI FUNZIONAMENTO E PERMESSI (IMPORTANTE)
+-------------------------------------------------------------------------------
+ VENUS è progettato per lavorare in armonia con le politiche di sicurezza IT:
+
+ - CLONAZIONE: Il programma non sposta la cartella sorgente, ma CLONA IL 
+   CONTENUTO della cartella modello all'interno della nuova commessa.
+ - SICUREZZA: Ogni file e sottocartella viene creato mantenendo i permessi 
+   e le restrizioni già configurati sul modello originale nel NAS.
+ - AMMINISTRAZIONE: Se volete che alcune cartelle siano visibili solo a 
+   determinati utenti, impostate le restrizioni sulla cartella "_MODELLO_". 
+   VENUS replicherà fedelmente tali privilegi.
+
+3. GUIDA RAPIDA ALL'USO (MANUALE UTENTE)
+-------------------------------------------------------------------------------
+ PASSO 1: CONFIGURAZIONE
+ All'avvio, cliccare sull'icona dell'INGRANAGGIO in alto a sinistra.
+ > Percorso NAS: Inserire la cartella radice dove risiedono le annualità.
+ > Percorso Modello: Inserire il percorso della cartella che contiene la 
+   struttura standard da replicare.
+
+ PASSO 2: CREAZIONE COMMESSA
+ 1. Selezionare l'ANNO dal menu (il programma legge le cartelle sul server).
+ 2. Inserire il NOME CLIENTE (es. 26.01 NOME AZIENDA).
+ 3. Selezionare le sottocartelle opzionali (Tecnica/Amministrazione).
+ 4. Premere "CREA COMMESSA". Al termine la cartella verrà aperta in Explorer.
+
+ PASSO 3: GESTIONE ACCOUNT
+ Cliccare su "ⓘ Gestione Account" per visualizzare l'ID del vostro PC, 
+ verificare la scadenza della licenza o richiedere assistenza.
+
+4. RISOLUZIONE PROBLEMI (FAQ)
+-------------------------------------------------------------------------------
+ D: La finestra rimane bloccata e non si trascina?
+ R: Il problema è risolto nella V3.1.0. Ora puoi trascinare la finestra 
+    cliccando in qualsiasi punto dello sfondo o sul titolo.
+
+ D: Perché alcune cartelle non vengono create?
+ R: Verificare di avere i privilegi di scrittura sul NAS e che la 
+    connessione di rete (VPN se fuori sede) sia attiva.
+
+ D: Come aggiorno la licenza?
+ R: Accedere a "Gestione Account", copiare l'ID PC e inviarlo tramite 
+    il modulo di richiesta integrato nel programma.
+
+*******************************************************************************
+         (c) 2026 VENETA FINISHING S.R.L. - TUTTI I DIRITTI RISERVATI
+               PROGETTATO E SVILUPPATO DA VENETA FINISHING
+*******************************************************************************
