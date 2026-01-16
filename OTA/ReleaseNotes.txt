@@ -1,4 +1,3 @@
-
 *******************************************************************************
     __      ________ _   _ _    _  _____ 
     \ \    / /  ____| \ | | |  | |/ ____|
@@ -6,13 +5,13 @@
       \ \/ / |  __| | . ` | |  | |\___ \ 
        \  /  | |____| |\  | |__| |____) |
         \/   |______|_| \_|_ \____/|_____/ 
-                                          
-           VENETA ENGINEERING NETWORK UTILITY SYSTEM
+                                           
+            VENETA ENGINEERING NETWORK UTILITY SYSTEM
 *******************************************************************************
  DOCUMENTO TECNICO STORICO E MANUALE OPERATIVO (Full Release)
 *******************************************************************************
  Stato Software:  PROD (Production Ready)
- Versione:        3.1.5 "Professional" (LTS)
+ Versione:        3.2.5 "Professional" (LTS)
  Roadmap Target:  3.5.0 "Enterprise"
  Sviluppo:        Veneta Finishing S.r.l. - IT/Engineering Dept.
  Build Date:      2026.01.16
@@ -37,84 +36,64 @@
  - Integrazione componenti grafici Oro/Grigio e angoli arrotondati.
  - Introduzione del sistema di protezione Hardware ID (UUID).
 
- [V 3.1.0] - CLONE & SECURITY (Gennaio 2026)
- - Evoluzione logica: Passaggio alla clonazione speculare del modello.
- - Gestione permessi NTFS (ACL) ereditati direttamente dal modello sorgente.
- - Fix per compatibilità avanzata Windows 11 e trascinamento finestra.
+ [V 3.1.0] - CLONE & SECURITY (12 Gennaio 2026)
+ - Evoluzione logica: Passaggio alla clonazione speculare del contenuto.
+ - Gestione privilegi: Copia dei file con elevazione per evitare blocchi NAS.
+ - Feature: La cartella Modello viene ora processata prima dell'anno fiscale.
 
- [V 3.1.5] - SMART WORKFLOW (RELEASE ATTUALE)
+ [V 3.1.5] - SMART WORKFLOW (14 Gennaio 2026)
  - Migrazione Standard: Cambio separatore commessa da punto [.] a trattino [-].
  - Smart Prefix: Il numero commessa rimane persistente durante l'editing.
- - Auto-Sync NAS: Algoritmo di scansione intelligente per progressivo automatico.
+ - Config Sync: License e Config file posizionati accanto all'eseguibile.
+
+ [V 3.2.0] - SYSTEM RESILIENCE (16 Gennaio 2026)
+ - Data Segregation: Spostamento di Licenza e Configurazione in %LOCALAPPDATA%.
+ - Independent Path: Il software non dipende più dalla cartella di avvio.
+ - Anti-Ghost: Risolto bug cartelle nascoste post-creazione su server Linux.
+
+ [V 3.2.5] - OTA UPDATE SYSTEM (RELEASE ATTUALE)
+ - Over-The-Air Update: Implementato sistema di auto-aggiornamento via GitHub.
+ - Dual-Sync: Aggiornamento simultaneo e forzato di Eseguibile e Note.
+ - Admin Bypass: Lo script di update richiede privilegi elevati solo se necessario.
+ - Edit List: Editor integrato nelle impostazioni per le liste cartelle.
 
 2. LOGICA DI SICUREZZA E LICENZE CORPORATE
 -------------------------------------------------------------------------------
  Il software adotta protocolli di sicurezza per la protezione del workflow:
 
  > LICENZA: Sistema "Node-Locked" vincolato univocamente al ComputerID.
- > ARCHIVIAZIONE: File di configurazione e licenza segregati in %LOCALAPPDATA%
-   per garantire la resilienza del sistema in caso di spostamento dell'eseguibile.
- > PRIVACY: Validazione locale tramite hashing MD5. Nessun dato sensibile o
-   struttura file viene trasmessa all'esterno della rete aziendale.
+ > ARCHIVIAZIONE: I file critici sono segregati nella cartella di sistema:
+   %LOCALAPPDATA%/VENUS_System (per evitare cancellazioni accidentali).
+ > PRIVACY: Validazione locale tramite hashing MD5. Nessun dato inviato esternamente.
 
 3. ARCHITETTURA TECNICA (STABILITÀ & PRIVILEGI)
 -------------------------------------------------------------------------------
- - ENGINE: Algoritmo di replica speculare ad alte prestazioni.
- - INTEGRITÀ: Copia integrale di Dati, Attributi, Date e Sicurezza (ACL).
- - GESTIONE NAS: Script di post-creazione per forzare la visibilità ed 
-   eliminare i conflitti di sistema tipici dei server Linux/Samba.
- - EREDITARIETÀ: Le cartelle Amministrazione/Tecnica ereditano i permessi
-   configurati dall'amministratore sulla cartella "_MODELLO_".
+ - ENGINE: Algoritmo di replica speculare ad alte prestazioni (Robocopy).
+ - INTEGRITÀ: Copia integrale del contenuto del Modello (senza duplicare la root).
+ - GESTIONE NAS: Script di post-creazione con 'attrib' per forzare la visibilità.
+ - EREDITARIETÀ: Sincronizzazione automatica dei permessi NTFS dal Modello.
 
 4. ROADMAP SVILUPPO (FUTURE DEVELOPMENTS)
 -------------------------------------------------------------------------------
- [V 3.2.0] - PDF REPORTER: Generazione automatica scheda commessa in PDF.
- [V 3.3.0] - QUICK SEARCH: Motore di ricerca interno per archivio storico.
- [V 3.4.0] - MULTI-TEMPLATE: Gestione modelli diversi per tipologia lavoro.
- [V 3.5.0] - ENTERPRISE DASHBOARD: Statistiche grafiche sui volumi di 
-             produzione e integrazione database aziendali.
+ [V 3.3.0] - PDF REPORTER: Generazione automatica scheda commessa.
+ [V 3.4.0] - MULTI-TEMPLATE: Supporto per diversi settori aziendali.
+ [V 3.5.0] - ENTERPRISE DASHBOARD: Integrazione database SQL.
 
-5. MANUALE OPERATIVO DETTAGLIATO (USER GUIDE V3.1.5)
+5. MANUALE OPERATIVO DETTAGLIATO (USER GUIDE V3.2.5)
 -------------------------------------------------------------------------------
- FASE A: PREPARAZIONE E SINCRONIZZAZIONE
- 1. All'avvio, VENUS interroga il NAS nel percorso configurato.
- 2. Selezionare l'anno fiscale dal menu a tendina (es. 2026).
- 3. Il sistema scansiona l'archivio e propone automaticamente il primo numero 
-    disponibile nel formato [AA-NN] (es. 26-04).
+ FASE A: PREPARAZIONE
+ 1. Configurare i percorsi NAS e Modello tramite l'icona Ingranaggio.
+ 2. Inserire la licenza se richiesto (ID PC visibile nell'area Info).
 
- FASE B: INSERIMENTO DATI (LOGICA SMART-INPUT)
- 1. Individuare il campo centrale dove appare "26-XX NOME CLIENTE" (in grigio).
- 2. FARE CLICK sul testo: La scritta "NOME CLIENTE" sparirà, lasciando il 
-    numero di commessa e uno spazio già pronti (es. "26-04 ").
- 3. DIGITARE il nome del cliente o della commessa. 
-    NOTA: Se si cancella accidentalmente il numero, è possibile riscriverlo 
-    o cliccare fuori dal campo e rientrare per ripristinare il suggerimento.
- 4. REGOLE NOMI: Evitare caratteri speciali come \ / : * ? " < > |
+ FASE B: INSERIMENTO DATI
+ 1. Selezionare l'anno: il sistema calcolerà il primo progressivo [AA-NN] libero.
+ 2. Cliccare nel campo testo: il prefisso rimarrà fisso, digitare il cliente.
 
- FASE C: PERSONALIZZAZIONE STRUTTURA
- 1. Nel pannello a scorrimento centrale (Scrollbar Oro), selezionare le 
-    sottocartelle necessarie per il progetto specifico.
- 2. Cartelle Tecniche: Vengono create nella radice della commessa.
- 3. Cartelle Amministrazione: Vengono raggruppate nella sottodirectory 
-    "Amministrazione", ereditando i permessi protetti dal Modello.
-
- FASE D: GENERAZIONE E DEPLOYMENT
- 1. Premere il pulsante blu "CREA COMMESSA".
- 2. Il sistema esegue tre operazioni in background:
-    - Creazione della directory principale sul NAS.
-    - Clonazione speculare dei file contenuti nella cartella _MODELLO_.
-    - Rimozione automatica degli attributi di sistema errati.
- 3. Al termine (1-2 secondi), si aprirà automaticamente una finestra di 
-    Esplora Risorse posizionata all'interno della nuova commessa creata.
-
- FASE E: RISOLUZIONE PROBLEMI RAPIDA
- - Messaggio "Inserire nome cliente": Hai premuto Crea senza scrivere nulla 
-   dopo il numero di commessa.
- - Icona Ingranaggio: Da utilizzare solo se il server cambia indirizzo IP 
-   o se viene spostata la cartella "_MODELLO_".
- - Icona Info (i): Utilizzare per copiare l'ID PC da inviare all'assistenza.
+ FASE C: CREAZIONE
+ 1. Selezionare le sottocartelle tecniche e amministrative.
+ 2. Cliccare "CREA COMMESSA". Il sistema copierà il contenuto del modello
+    e aprirà automaticamente la cartella in Esplora Risorse.
 
 *******************************************************************************
    (c) 2026 VENETA FINISHING S.R.L. - TUTTI I DIRITTI RISERVATI
-   IL SOFTWARE È PROPRIETÀ INTELLETTUALE DI VENETA FINISHING S.R.L.
 *******************************************************************************
