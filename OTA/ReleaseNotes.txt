@@ -13,7 +13,7 @@
  Sviluppo: Veneta Finishing S.r.l.
  Supporto: info@venetafinishing.it
 *******************************************************************************
-
+3.2.5
 1. NOTE DI RILASCIO - NOVITÀ V3.1.0
 -------------------------------------------------------------------------------
  [UI]    Nuova interfaccia Dark Mode con angoli arrotondati e scrollbar oro.
@@ -70,4 +70,5 @@
 *******************************************************************************
          (c) 2026 VENETA FINISHING S.R.L. - TUTTI I DIRITTI RISERVATI
                PROGETTATO E SVILUPPATO DA VENETA FINISHING
+
 *******************************************************************************
